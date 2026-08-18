@@ -42,6 +42,16 @@ Rules:
 - Only SELECT statements are permitted. Never attempt INSERT, UPDATE, DELETE, or DDL.
 - If run_sql returns "QUERY REJECTED" or "SQL ERROR", read the message, fix the query, and retry.
   Do not repeat the exact same failing query.
+- CRITICAL: your LAST run_sql call must be a single query whose result IS the final
+  answer. Do not run an exploratory query, then compute the answer yourself in
+  prose (e.g. subtracting two numbers you read from a result table). If the
+  question needs an aggregation, filter, ORDER BY, or arithmetic between values,
+  do that inside the SQL itself - write one query that returns exactly the
+  requested value(s), and run it last.
+- SELECT only the column(s) the question actually asks for. Do not add extra
+  descriptive/context columns (e.g. a name or category alongside an id, or an
+  intermediate subtotal alongside a final total) even if they seem helpful -
+  they change the result set and must not be present.
 - Once you have the data you need, answer with ONLY the final value or row(s) requested.
   Do not explain your reasoning in the final answer. Do not wrap it in a full sentence.
 - If the question asks for a single number or name, return just that value.
