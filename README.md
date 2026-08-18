@@ -45,22 +45,28 @@ set-equality between the agent's SQL result and the gold SQL result).
 
 | Model | EX | Correct | Avg. cost/query | Total cost | p50 latency |
 |---|---|---|---|---|---|
-| Claude Haiku 4.5 (mini) | **53.0%** | 265/500 | $0.0096 | $4.57 | 4.8s |
-| Claude Sonnet 5 (frontier) | *pending* | | | | |
+| Claude Haiku 4.5 (mini) | 53.0% | 265/500 | $0.0096 | $4.57 | 4.8s |
+| Claude Sonnet 5 (frontier) | **61.8%** | 309/500 | $0.0190 | $9.37 | 7.4s |
 
-By difficulty (mini):
+Roughly 2x the cost buys +8.8 points of EX - a real cost/accuracy tradeoff, not just
+"bigger model wins," reported as both numbers rather than one.
 
-| Difficulty | n | Accuracy |
-|---|---|---|
-| Simple | 148 | 74.3% |
-| Moderate | 250 | 48.0% |
-| Challenging | 102 | 34.3% |
+By difficulty:
+
+| Difficulty | n | Mini EX | Frontier EX |
+|---|---|---|---|
+| Simple | 148 | 74.3% | 77.7% |
+| Moderate | 250 | 48.0% | 57.2% |
+| Challenging | 102 | 34.3% | 50.0% |
 
 For reference, the [BIRD Mini-Dev README](https://github.com/bird-bench/mini_dev)
 cites a GPT-4 baseline of 47.8% EX and a top reported mini-dev SQLite score around
 58% (confirm which exact split before quoting either figure elsewhere - mini-dev and
 full BIRD dev numbers are not comparable, and full-dev's leaderboard frontier has
-sat around 81-82% EX against a 92.96% human baseline for over a year).
+sat around 81-82% EX against a 92.96% human baseline for over a year). This
+project's frontier run (61.8%) is above that ~58% figure - a genuinely strong
+result, though comparing across different agent harnesses is not perfectly
+apples-to-apples, so treat it as encouraging rather than as a leaderboard claim.
 
 ## Benchmark audit
 
