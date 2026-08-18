@@ -1,0 +1,607 @@
+{
+  "n": 100,
+  "kappa": 0.550965424337674,
+  "raw_agreement": 0.8,
+  "details": [
+    {
+      "question_id": 1471,
+      "ex_correct": true,
+      "judge_correct": true,
+      "agree": true
+    },
+    {
+      "question_id": 1472,
+      "ex_correct": false,
+      "judge_correct": false,
+      "agree": true
+    },
+    {
+      "question_id": 1473,
+      "ex_correct": false,
+      "judge_correct": true,
+      "agree": false
+    },
+    {
+      "question_id": 1476,
+      "ex_correct": false,
+      "judge_correct": true,
+      "agree": false
+    },
+    {
+      "question_id": 1479,
+      "ex_correct": false,
+      "judge_correct": true,
+      "agree": false
+    },
+    {
+      "question_id": 1480,
+      "ex_correct": false,
+      "judge_correct": true,
+      "agree": false
+    },
+    {
+      "question_id": 1483,
+      "ex_correct": true,
+      "judge_correct": true,
+      "agree": true
+    },
+    {
+      "question_id": 1484,
+      "ex_correct": false,
+      "judge_correct": false,
+      "agree": true
+    },
+    {
+      "question_id": 1486,
+      "ex_correct": true,
+      "judge_correct": true,
+      "agree": true
+    },
+    {
+      "question_id": 1490,
+      "ex_correct": false,
+      "judge_correct": false,
+      "agree": true
+    },
+    {
+      "question_id": 1493,
+      "ex_correct": false,
+      "judge_correct": true,
+      "agree": false
+    },
+    {
+      "question_id": 1498,
+      "ex_correct": false,
+      "judge_correct": false,
+      "agree": true
+    },
+    {
+      "question_id": 1500,
+      "ex_correct": true,
+      "judge_correct": false,
+      "agree": false
+    },
+    {
+      "question_id": 1505,
+      "ex_correct": false,
+      "judge_correct": false,
+      "agree": true
+    },
+    {
+      "question_id": 1506,
+      "ex_correct": true,
+      "judge_correct": false,
+      "agree": false
+    },
+    {
+      "question_id": 1507,
+      "ex_correct": true,
+      "judge_correct": true,
+      "agree": true
+    },
+    {
+      "question_id": 1509,
+      "ex_correct": true,
+      "judge_correct": true,
+      "agree": true
+    },
+    {
+      "question_id": 1514,
+      "ex_correct": true,
+      "judge_correct": true,
+      "agree": true
+    },
+    {
+      "question_id": 1515,
+      "ex_correct": true,
+      "judge_correct": true,
+      "agree": true
+    },
+    {
+      "question_id": 1521,
+      "ex_correct": true,
+      "judge_correct": true,
+      "agree": true
+    },
+    {
+      "question_id": 1524,
+      "ex_correct": false,
+      "judge_correct": false,
+      "agree": true
+    },
+    {
+      "question_id": 1525,
+      "ex_correct": false,
+      "judge_correct": false,
+      "agree": true
+    },
+    {
+      "question_id": 1526,
+      "ex_correct": false,
+      "judge_correct": false,
+      "agree": true
+    },
+    {
+      "question_id": 1528,
+      "ex_correct": false,
+      "judge_correct": true,
+      "agree": false
+    },
+    {
+      "question_id": 1529,
+      "ex_correct": false,
+      "judge_correct": false,
+      "agree": true
+    },
+    {
+      "question_id": 1531,
+      "ex_correct": false,
+      "judge_correct": false,
+      "agree": true
+    },
+    {
+      "question_id": 1533,
+      "ex_correct": false,
+      "judge_correct": false,
+      "agree": true
+    },
+    {
+      "question_id": 1312,
+      "ex_correct": true,
+      "judge_correct": true,
+      "agree": true
+    },
+    {
+      "question_id": 1317,
+      "ex_correct": true,
+      "judge_correct": true,
+      "agree": true
+    },
+    {
+      "question_id": 1322,
+      "ex_correct": false,
+      "judge_correct": false,
+      "agree": true
+    },
+    {
+      "question_id": 1323,
+      "ex_correct": true,
+      "judge_correct": true,
+      "agree": true
+    },
+    {
+      "question_id": 1331,
+      "ex_correct": true,
+      "judge_correct": true,
+      "agree": true
+    },
+    {
+      "question_id": 1334,
+      "ex_correct": true,
+      "judge_correct": true,
+      "agree": true
+    },
+    {
+      "question_id": 1338,
+      "ex_correct": false,
+      "judge_correct": true,
+      "agree": false
+    },
+    {
+      "question_id": 1339,
+      "ex_correct": true,
+      "judge_correct": true,
+      "agree": true
+    },
+    {
+      "question_id": 1344,
+      "ex_correct": true,
+      "judge_correct": true,
+      "agree": true
+    },
+    {
+      "question_id": 1346,
+      "ex_correct": true,
+      "judge_correct": true,
+      "agree": true
+    },
+    {
+      "question_id": 1350,
+      "ex_correct": true,
+      "judge_correct": true,
+      "agree": true
+    },
+    {
+      "question_id": 1351,
+      "ex_correct": true,
+      "judge_correct": true,
+      "agree": true
+    },
+    {
+      "question_id": 1352,
+      "ex_correct": true,
+      "judge_correct": true,
+      "agree": true
+    },
+    {
+      "question_id": 1356,
+      "ex_correct": true,
+      "judge_correct": true,
+      "agree": true
+    },
+    {
+      "question_id": 1357,
+      "ex_correct": true,
+      "judge_correct": true,
+      "agree": true
+    },
+    {
+      "question_id": 1359,
+      "ex_correct": true,
+      "judge_correct": true,
+      "agree": true
+    },
+    {
+      "question_id": 1361,
+      "ex_correct": true,
+      "judge_correct": true,
+      "agree": true
+    },
+    {
+      "question_id": 1362,
+      "ex_correct": true,
+      "judge_correct": true,
+      "agree": true
+    },
+    {
+      "question_id": 1368,
+      "ex_correct": true,
+      "judge_correct": true,
+      "agree": true
+    },
+    {
+      "question_id": 1371,
+      "ex_correct": true,
+      "judge_correct": true,
+      "agree": true
+    },
+    {
+      "question_id": 1375,
+      "ex_correct": true,
+      "judge_correct": true,
+      "agree": true
+    },
+    {
+      "question_id": 1376,
+      "ex_correct": true,
+      "judge_correct": true,
+      "agree": true
+    },
+    {
+      "question_id": 1378,
+      "ex_correct": true,
+      "judge_correct": true,
+      "agree": true
+    },
+    {
+      "question_id": 1380,
+      "ex_correct": true,
+      "judge_correct": true,
+      "agree": true
+    },
+    {
+      "question_id": 1381,
+      "ex_correct": false,
+      "judge_correct": false,
+      "agree": true
+    },
+    {
+      "question_id": 1387,
+      "ex_correct": false,
+      "judge_correct": false,
+      "agree": true
+    },
+    {
+      "question_id": 1389,
+      "ex_correct": true,
+      "judge_correct": true,
+      "agree": true
+    },
+    {
+      "question_id": 1390,
+      "ex_correct": false,
+      "judge_correct": true,
+      "agree": false
+    },
+    {
+      "question_id": 1392,
+      "ex_correct": true,
+      "judge_correct": true,
+      "agree": true
+    },
+    {
+      "question_id": 1394,
+      "ex_correct": true,
+      "judge_correct": true,
+      "agree": true
+    },
+    {
+      "question_id": 1398,
+      "ex_correct": true,
+      "judge_correct": true,
+      "agree": true
+    },
+    {
+      "question_id": 1399,
+      "ex_correct": false,
+      "judge_correct": true,
+      "agree": false
+    },
+    {
+      "question_id": 1401,
+      "ex_correct": true,
+      "judge_correct": true,
+      "agree": true
+    },
+    {
+      "question_id": 1403,
+      "ex_correct": true,
+      "judge_correct": true,
+      "agree": true
+    },
+    {
+      "question_id": 1404,
+      "ex_correct": false,
+      "judge_correct": false,
+      "agree": true
+    },
+    {
+      "question_id": 1405,
+      "ex_correct": false,
+      "judge_correct": true,
+      "agree": false
+    },
+    {
+      "question_id": 1409,
+      "ex_correct": true,
+      "judge_correct": true,
+      "agree": true
+    },
+    {
+      "question_id": 1410,
+      "ex_correct": true,
+      "judge_correct": true,
+      "agree": true
+    },
+    {
+      "question_id": 1411,
+      "ex_correct": true,
+      "judge_correct": true,
+      "agree": true
+    },
+    {
+      "question_id": 1422,
+      "ex_correct": false,
+      "judge_correct": false,
+      "agree": true
+    },
+    {
+      "question_id": 1426,
+      "ex_correct": true,
+      "judge_correct": true,
+      "agree": true
+    },
+    {
+      "question_id": 1427,
+      "ex_correct": false,
+      "judge_correct": true,
+      "agree": false
+    },
+    {
+      "question_id": 1432,
+      "ex_correct": true,
+      "judge_correct": true,
+      "agree": true
+    },
+    {
+      "question_id": 1435,
+      "ex_correct": true,
+      "judge_correct": false,
+      "agree": false
+    },
+    {
+      "question_id": 1457,
+      "ex_correct": true,
+      "judge_correct": true,
+      "agree": true
+    },
+    {
+      "question_id": 1460,
+      "ex_correct": true,
+      "judge_correct": true,
+      "agree": true
+    },
+    {
+      "question_id": 1464,
+      "ex_correct": true,
+      "judge_correct": true,
+      "agree": true
+    },
+    {
+      "question_id": 1149,
+      "ex_correct": false,
+      "judge_correct": true,
+      "agree": false
+    },
+    {
+      "question_id": 1150,
+      "ex_correct": false,
+      "judge_correct": true,
+      "agree": false
+    },
+    {
+      "question_id": 1152,
+      "ex_correct": false,
+      "judge_correct": false,
+      "agree": true
+    },
+    {
+      "question_id": 1153,
+      "ex_correct": false,
+      "judge_correct": false,
+      "agree": true
+    },
+    {
+      "question_id": 1155,
+      "ex_correct": true,
+      "judge_correct": false,
+      "agree": false
+    },
+    {
+      "question_id": 1156,
+      "ex_correct": true,
+      "judge_correct": true,
+      "agree": true
+    },
+    {
+      "question_id": 1157,
+      "ex_correct": true,
+      "judge_correct": true,
+      "agree": true
+    },
+    {
+      "question_id": 1162,
+      "ex_correct": true,
+      "judge_correct": true,
+      "agree": true
+    },
+    {
+      "question_id": 1164,
+      "ex_correct": true,
+      "judge_correct": true,
+      "agree": true
+    },
+    {
+      "question_id": 1166,
+      "ex_correct": false,
+      "judge_correct": false,
+      "agree": true
+    },
+    {
+      "question_id": 1168,
+      "ex_correct": false,
+      "judge_correct": false,
+      "agree": true
+    },
+    {
+      "question_id": 1169,
+      "ex_correct": true,
+      "judge_correct": true,
+      "agree": true
+    },
+    {
+      "question_id": 1171,
+      "ex_correct": true,
+      "judge_correct": true,
+      "agree": true
+    },
+    {
+      "question_id": 1179,
+      "ex_correct": false,
+      "judge_correct": false,
+      "agree": true
+    },
+    {
+      "question_id": 1185,
+      "ex_correct": true,
+      "judge_correct": true,
+      "agree": true
+    },
+    {
+      "question_id": 1187,
+      "ex_correct": false,
+      "judge_correct": false,
+      "agree": true
+    },
+    {
+      "question_id": 1189,
+      "ex_correct": true,
+      "judge_correct": true,
+      "agree": true
+    },
+    {
+      "question_id": 1192,
+      "ex_correct": true,
+      "judge_correct": true,
+      "agree": true
+    },
+    {
+      "question_id": 1195,
+      "ex_correct": true,
+      "judge_correct": true,
+      "agree": true
+    },
+    {
+      "question_id": 1198,
+      "ex_correct": true,
+      "judge_correct": true,
+      "agree": true
+    },
+    {
+      "question_id": 1201,
+      "ex_correct": true,
+      "judge_correct": true,
+      "agree": true
+    },
+    {
+      "question_id": 1205,
+      "ex_correct": false,
+      "judge_correct": false,
+      "agree": true
+    },
+    {
+      "question_id": 1208,
+      "ex_correct": true,
+      "judge_correct": false,
+      "agree": false
+    },
+    {
+      "question_id": 1209,
+      "ex_correct": true,
+      "judge_correct": false,
+      "agree": false
+    },
+    {
+      "question_id": 1220,
+      "ex_correct": true,
+      "judge_correct": true,
+      "agree": true
+    },
+    {
+      "question_id": 1225,
+      "ex_correct": false,
+      "judge_correct": true,
+      "agree": false
+    }
+  ]
+}
