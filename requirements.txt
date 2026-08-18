@@ -1,0 +1,14 @@
+langgraph>=0.2
+langchain-core>=0.3
+langchain-anthropic>=0.3
+anthropic>=0.40
+sqlglot>=25.0
+sqlalchemy>=2.0
+deepeval>=1.5
+langfuse>=2.50
+streamlit>=1.40
+pandas>=2.2
+python-dotenv>=1.0
+tenacity>=9.0
+pytest>=8.0
+scikit-learn>=1.5
