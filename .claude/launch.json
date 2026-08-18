@@ -1,0 +1,11 @@
+{
+  "version": "0.0.1",
+  "configurations": [
+    {
+      "name": "eval-dashboard",
+      "runtimeExecutable": ".venv311/Scripts/streamlit.exe",
+      "runtimeArgs": ["run", "dashboard/app.py"],
+      "port": 8502
+    }
+  ]
+}

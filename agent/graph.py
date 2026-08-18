@@ -96,7 +96,13 @@ def run_agent(
     Langfuse UI, e.g. {"db_id": ..., "question_id": ..., "eval_run": "mini-vs-frontier"}.
     """
     tools = build_tools(db_path)
-    model = ChatAnthropic(model=model_name, temperature=0, max_tokens=1024)
+    # claude-sonnet-5 rejects an explicit temperature param ("deprecated for this
+    # model") - its sampling is managed internally. Only pin temperature=0 on
+    # models that accept it.
+    model_kwargs = {"model": model_name, "max_tokens": 1024}
+    if model_name != "claude-sonnet-5":
+        model_kwargs["temperature"] = 0
+    model = ChatAnthropic(**model_kwargs)
     agent = create_agent(model, tools, system_prompt=SYSTEM_PROMPT)
 
     langfuse_handler = CallbackHandler()
