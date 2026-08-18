@@ -1,7 +1,8 @@
 """
 Downloads the BIRD Mini-Dev dataset (500 SQLite instances, CC BY-SA 4.0) from the
 official Aliyun OSS distribution linked in https://github.com/bird-bench/mini_dev,
-and extracts it into data/mini_dev/.
+and extracts it into data/minidev/MINIDEV/ (that nested casing is how the official
+zip is laid out - not renamed here, so paths match the upstream documentation).
 
 The HuggingFace dataset (birdsql/bird_mini_dev) only ships the question/gold-SQL
 JSON, not the actual per-database SQLite files needed to execute queries - so this
@@ -20,7 +21,8 @@ DATASET_URL = "https://bird-bench.oss-cn-beijing.aliyuncs.com/minidev.zip"
 ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 DATA_DIR = os.path.join(ROOT, "data")
 ZIP_PATH = os.path.join(DATA_DIR, "minidev.zip")
-EXTRACT_MARKER = os.path.join(DATA_DIR, "mini_dev", ".fetched")
+EXTRACTED_DIR = os.path.join(DATA_DIR, "minidev", "MINIDEV")
+EXTRACT_MARKER = os.path.join(DATA_DIR, ".fetched")
 
 
 def download(url: str, dest: str, max_retries: int = 15) -> None:
@@ -67,8 +69,8 @@ def main() -> None:
     os.makedirs(DATA_DIR, exist_ok=True)
 
     if os.path.exists(EXTRACT_MARKER):
-        print(f"Already fetched - see {os.path.dirname(EXTRACT_MARKER)}")
-        print("Delete data/mini_dev/.fetched to force a re-download.")
+        print(f"Already fetched - see {EXTRACTED_DIR}")
+        print("Delete data/.fetched to force a re-download.")
         return
 
     if not os.path.exists(ZIP_PATH):
@@ -81,13 +83,14 @@ def main() -> None:
     with zipfile.ZipFile(ZIP_PATH) as zf:
         zf.extractall(DATA_DIR)
 
-    os.makedirs(os.path.dirname(EXTRACT_MARKER), exist_ok=True)
     with open(EXTRACT_MARKER, "w") as f:
         f.write("ok\n")
 
-    print(f"Done. Dataset extracted under {DATA_DIR}")
-    print("Consider deleting minidev.zip to save disk space:")
-    print(f"  {ZIP_PATH}")
+    if os.path.exists(ZIP_PATH):
+        os.remove(ZIP_PATH)
+        print("Removed minidev.zip after extraction (dataset itself is ~3.3GB).")
+
+    print(f"Done. Dataset extracted under {EXTRACTED_DIR}")
 
 
 if __name__ == "__main__":

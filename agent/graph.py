@@ -14,9 +14,26 @@ from dataclasses import dataclass
 
 from langchain.agents import create_agent
 from langchain_anthropic import ChatAnthropic
+from langfuse.langchain import CallbackHandler
 
 from agent.guardrails import MAX_TOOL_CALLS_PER_QUERY
 from agent.tools import build_tools
+
+# USD per million tokens. Verified against https://platform.claude.com/docs/en/about-claude/pricing
+# (accessed 2026-08-18) - re-check before relying on these for anything beyond this project's
+# own README, since Anthropic revises pricing periodically.
+PRICING_PER_MTOK = {
+    "claude-haiku-4-5-20251001": {"input": 1.00, "output": 5.00},
+    "claude-sonnet-5": {"input": 2.00, "output": 10.00},
+}
+
+
+def estimate_cost_usd(model_name: str, input_tokens: int, output_tokens: int) -> float | None:
+    rates = PRICING_PER_MTOK.get(model_name)
+    if rates is None:
+        return None
+    return (input_tokens * rates["input"] + output_tokens * rates["output"]) / 1_000_000
+
 
 SYSTEM_PROMPT = """You are a SQL analyst answering questions against a single SQLite database.
 
@@ -42,6 +59,7 @@ class AgentResult:
     input_tokens: int
     output_tokens: int
     elapsed_seconds: float
+    cost_usd: float | None
 
 
 def _extract_sql_calls(messages) -> list[str]:
@@ -54,17 +72,35 @@ def _extract_sql_calls(messages) -> list[str]:
     return queries
 
 
-def run_agent(db_path: str, question: str, model_name: str = MINI_MODEL) -> AgentResult:
-    """Run the agent against one question. Bounded by MAX_TOOL_CALLS_PER_QUERY."""
+def run_agent(
+    db_path: str,
+    question: str,
+    model_name: str = MINI_MODEL,
+    trace_metadata: dict | None = None,
+) -> AgentResult:
+    """
+    Run the agent against one question. Bounded by MAX_TOOL_CALLS_PER_QUERY.
+
+    Every run is traced to Langfuse (a no-op if LANGFUSE_PUBLIC_KEY isn't set - see
+    .env.example). trace_metadata is attached to the trace for filtering in the
+    Langfuse UI, e.g. {"db_id": ..., "question_id": ..., "eval_run": "mini-vs-frontier"}.
+    """
     tools = build_tools(db_path)
     model = ChatAnthropic(model=model_name, temperature=0, max_tokens=1024)
     agent = create_agent(model, tools, system_prompt=SYSTEM_PROMPT)
 
+    langfuse_handler = CallbackHandler()
+    config = {
+        "recursion_limit": MAX_TOOL_CALLS_PER_QUERY * 2 + 2,
+        "callbacks": [langfuse_handler],
+        "metadata": {
+            "langfuse_tags": ["text-to-sql-agent", model_name],
+            **(trace_metadata or {}),
+        },
+    }
+
     t0 = time.monotonic()
-    result = agent.invoke(
-        {"messages": [{"role": "user", "content": question}]},
-        config={"recursion_limit": MAX_TOOL_CALLS_PER_QUERY * 2 + 2},
-    )
+    result = agent.invoke({"messages": [{"role": "user", "content": question}]}, config=config)
     elapsed = time.monotonic() - t0
 
     messages = result["messages"]
@@ -88,4 +124,5 @@ def run_agent(db_path: str, question: str, model_name: str = MINI_MODEL) -> Agen
         input_tokens=input_tokens,
         output_tokens=output_tokens,
         elapsed_seconds=elapsed,
+        cost_usd=estimate_cost_usd(model_name, input_tokens, output_tokens),
     )
