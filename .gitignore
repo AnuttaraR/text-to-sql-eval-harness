@@ -13,9 +13,7 @@ build/
 
 # BIRD Mini-Dev raw dataset + per-DB sqlite files - fetched via scripts/fetch_bird_data.py,
 # not committed (large binary data, redistribution terms unclear beyond CC BY-SA 4.0 text).
-data/mini_dev/
-data/*.sqlite
-data/*.json
+data/
 
 # Langfuse / local trace exports
 .langfuse/
